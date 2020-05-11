@@ -1,0 +1,46 @@
+table.users {
+  table-layout: fixed;
+  width: 75%;
+  white-space: nowrap;
+  margin-left:auto; 
+  margin-right:auto;
+  border: 1px solid black;
+  background-color: yellow;
+}
+td {
+  border: 1px solid black;
+  text-align: left;
+}
+th {
+  border: 1px solid black;
+  text-align: right;
+}  
+h1 {
+  text-align: center;
+  color: green;
+  text-size: 50px;
+}
+h2 {
+  text-align: center;
+  color: green;
+  text-size: 45px;
+}
+h3 {
+  text-align: center;
+  color: red;
+  text-size: 30px;
+}
+input[type="text"] {
+height: 15px;
+width: 75px;
+}
+select.quantity {
+height: 20px;
+width: 30px;
+}
+th.th1 {
+  text-align: center;
+}
+td.td1 {
+  text-align: center;
+}

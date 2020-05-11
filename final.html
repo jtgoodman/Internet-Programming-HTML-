@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internet Programming Final Exam</title>
+<meta charset="utf-8">
+<link href="final.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js">
+</script>
+<![endif]-->
+</head>
+<body>
+  <h1> Markers! Markers! Markers!</h1>
+
+  <h1>Markers on Sale!</h1>
+  <h3>Calculate Your Order</h3>
+
+<table class="users">
+  <tr>
+      <th>Price:</th>
+      <td><input id="price" type="text"  value = "5.49">
+
+  </tr>
+  <tr>
+      <th> Quantity</th>
+      <td> <select id="quantity" class = "quantity">
+    	<option value="1">1</option>
+    	<option value="2">2</option>
+    	<option value="3">3</option>
+    	<option value="4">4</option>
+        <option value="5">5</option>
+  </select>
+  </tr>
+  <tr>
+     <th> State</th>
+     <td> <select id="State">
+    	<option value="0.085">Alabama</option>
+    	<option value="0.075">Florida</option>
+    	<option value="0.08">Georgia</option>
+  </tr>
+  <tr height = 35px>
+      <th height = 35px> Delivery Method: </th>
+      <td> <select id="Delivery" height = 35px>
+    	<option value="0.15">Standard UPS</option>
+    	<option value="0.10">Book Rate</option>
+    	<option value="0.3">Overnight</option>
+        <option value="0.6">Next Day Air</option>
+  </tr>
+  <tr>
+    <th> Cost (P * Q)</th>
+    <td><input id="cost" type="text"> 
+  </tr>
+  <tr>
+    <th> Shipping Cost: </th>
+    <td> <input id="ShippingCost" type="text">
+  </tr>
+  <tr>
+    <th> Tax Amount: </th>
+    <td> <input id="TaxAmount" type="text">
+  </tr>
+  <tr>
+    <td colspan="2" height = 20px> </td>
+  </tr>
+  <tr>
+    <th colspan="2" class = "th1"> Your Total is: </th>
+  </tr>
+  <tr>
+    <td class = "td1" colspan = "2"> <input id="total" type="text">
+  </tr>
+  <tr>
+    <td class = "td1" colspan = "2"> 
+      <button type ="button" input id = "submit" onclick = "myFunction()" >Calculate My Order</Button>
+  
+</table>
+<script> 
+function myFunction() {
+  var price = document.getElementById("price").value;
+  var quantity = document.getElementById("quantity").value;
+  document.getElementById("cost").value = price * quantity;
+
+  var cost = document.getElementById("cost").value;
+  var shipping = document.getElementById("Delivery").value;
+  var shippingCost = cost * shipping;
+  var sc = shippingCost.toFixed(2);
+  document.getElementById("ShippingCost").value = sc;
+
+  var taxes = document.getElementById("State").value;
+  var taxAmount = cost * taxes;
+  var ta = taxAmount.toFixed(2);
+  document.getElementById("TaxAmount").value = ta;
+
+  var shippingAmount = document.getElementById("ShippingCost").value;
+  var total = +shippingAmount + +taxAmount + +cost;
+  var total2 = total.toFixed(2);
+  document.getElementById("total").value = total2;
+}
+  
+</script>
+
+</body>
+</html>
